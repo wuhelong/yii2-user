@@ -49,7 +49,12 @@ class RegistrationForm extends Model
             // username rules
             'usernameTrim'     => ['username', 'trim'],
             'usernameLength'   => ['username', 'string', 'min' => 3, 'max' => 255],
-            'usernamePattern'  => ['username', 'match', 'pattern' => $user::$usernameRegexp],
+            'usernamePattern'  => [
+                'username',
+                'match',
+                'pattern' => $user::$usernameRegexp,
+                'message'=>Yii::t('user', 'Username can only contain letters, numbers, underscores')
+            ],
             'usernameRequired' => ['username', 'required'],
             'usernameUnique'   => [
                 'username',

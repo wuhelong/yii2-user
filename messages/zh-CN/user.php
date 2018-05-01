@@ -235,4 +235,6 @@ return [
     'Your password on {0} has been changed' => '您的 {0} 密码已更改',
     'Your profile has been updated' => '属性信息设置已被成功保存',
     '{0, date, MMMM dd, YYYY HH:mm}' => '{0, date, YYYY年MM月dd日 HH:mm}',
+    'Sign in with:' => '第三方登录：',
+    'Username can only contain letters, numbers, underscores' => '用户名只能包含字母、数字、下划线',
 ];

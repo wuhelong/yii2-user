@@ -226,7 +226,12 @@ class User extends ActiveRecord implements IdentityInterface
             // username rules
             'usernameTrim'     => ['username', 'trim'],
             'usernameRequired' => ['username', 'required', 'on' => ['register', 'create', 'connect', 'update']],
-            'usernameMatch'    => ['username', 'match', 'pattern' => static::$usernameRegexp],
+            'usernameMatch'    => [
+                'username',
+                'match',
+                'pattern' => static::$usernameRegexp,
+                'message'=>Yii::t('user', 'Username can only contain letters, numbers, underscores')
+            ],
             'usernameLength'   => ['username', 'string', 'min' => 3, 'max' => 255],
             'usernameUnique'   => [
                 'username',

@@ -89,6 +89,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 ) ?>
 
                 <?php ActiveForm::end(); ?>
+                <br/>
+                <div class="form-group">
+                    <label class="control-label"><?= Yii::t('user', 'Sign in with:')?></label>
+                    <?=Connect::widget(['baseAuthUrl' => ['/user/security/auth'],
+                        'popupMode' => false
+                    ])?>
+                </div>
             </div>
         </div>
         <?php if ($module->enableConfirmation): ?>
@@ -101,8 +108,5 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Html::a(Yii::t('user', 'Don\'t have an account? Sign up!'), ['/user/registration/register']) ?>
             </p>
         <?php endif ?>
-        <?= Connect::widget([
-            'baseAuthUrl' => ['/user/security/auth'],
-        ]) ?>
     </div>
 </div>
