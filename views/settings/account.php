@@ -53,7 +53,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <hr/>
 
-                <?= $form->field($model, 'current_password')->passwordInput() ?>
+                <?php 
+                    if ($model->user->password_hash == '') {
+                        echo($form->field($model, 'current_password'))->hiddenInput(['value'=> 'pd'])->label(false);
+                    } else {
+                        echo($form->field($model, 'current_password')->passwordInput());
+                    }
+                ?>
 
                 <div class="form-group">
                     <div class="col-lg-offset-3 col-lg-9">
